@@ -1,12 +1,11 @@
 .body {
-    font-family: 'Inter', sans-serif;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
     background: wheat;
 }
 
 .header {
     display: inline-flex;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
 }
 
 .container-tablero {
@@ -16,4 +15,6 @@
 
 .footer {
     display: flex;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
 }
