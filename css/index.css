@@ -4,3 +4,16 @@
     font-weight: 400;
     background: wheat;
 }
+
+.header {
+    display: inline-flex;
+}
+
+.container-tablero {
+    display: flex;
+    align-items: flex-end;
+}
+
+.footer {
+    display: flex;
+}
