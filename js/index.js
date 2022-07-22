@@ -1,6 +1,7 @@
 import { dibujarLineas, dibujarLetrasCorrectas, errores, palabraCorrecta } from "./dibujarLineas.js";
 
-export const tablero = document.querySelector("canvas").getContext("2d");
+export const tablero = document.getElementById("ahorcado");
+export const ahorcado = tablero.getContext("2d");
 
 export var palabras = ["CASA", "HOGAR", "CONTROL", "VISOR", "ZORRO", "ARROZ", "AZALEA", "PERRERA", 
 "FELINO", "CANINO", "COLLAR", "LAMPARA", "CABALLO", "TORO", "ELEMENTO", "CAJA", "ALURA",

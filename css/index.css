@@ -3,18 +3,28 @@
 }
 
 .header {
-    display: inline-flex;
+    display: flex;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
+    padding: 0.5em;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .container-tablero {
     display: flex;
-    align-items: flex-end;
+}
+
+.tablero-ahorcado {
+    border:1px solid #2b0d0d;
 }
 
 .footer {
     display: flex;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
+    padding: 0.5em;
+    margin: 0.2em;
+    align-items: center;
+    justify-content: space-around;
 }

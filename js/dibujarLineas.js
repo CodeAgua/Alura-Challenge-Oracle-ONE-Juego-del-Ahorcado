@@ -1,43 +1,57 @@
-import { tablero, palabraSecreta, letras } from "./index.js";
+import { ahorcado, palabraSecreta, letras } from "./index.js";
 
 export let errores = 8;
 export let palabraCorrecta = "";
 
 export function dibujarLineas() {
-  tablero.lineWidth = 6;
-  tablero.lineCap = "round";
-  tablero.lineJoin = "round";
-  tablero.strokeStyle = "#b746f0";
-  tablero.beginPath();
+  ahorcado.lineWidth = 6;
+  ahorcado.lineCap = "round";
+  ahorcado.lineJoin = "round";
+  var gradienteLinea = ahorcado.createLinearGradient(0,0,800,0);
+  gradienteLinea.addColorStop(0, "red");
+  gradienteLinea.addColorStop(0.5, "magenta");
+  gradienteLinea.addColorStop(1, "orange");
+  ahorcado.strokeStyle = gradienteLinea;
+  ahorcado.beginPath();
 
   var ancho = 600 / palabraSecreta.length;
   for (let i = 0; i < palabraSecreta.length; i++) {
-    tablero.moveTo(500 + ancho * i, 640);
-    tablero.lineTo(550 + ancho * i, 640);
+    ahorcado.moveTo(500 + ancho * i, 640);
+    ahorcado.lineTo(550 + ancho * i, 640);
   }
-  tablero.stroke();
-  tablero.closePath();
+  ahorcado.stroke();
+  ahorcado.closePath();
 }
 
 export function dibujarLetrasCorrectas(index) {
-  tablero.font = "bold 52px 'Inter'";
-  tablero.lineWidth = 6;
-  tablero.lineCap = "round";
-  tablero.lineJoin = "round";
-  tablero.fillStyle = "#b746f0";
+  ahorcado.font = "300 52px 'Roboto', sans-serif";
+  ahorcado.lineWidth = 7;
+  ahorcado.lineCap = "round";
+  ahorcado.lineJoin = "round";
+  var gradienteCorrectas = ahorcado.createLinearGradient(0,0,800,0);
+  gradienteCorrectas.addColorStop(0, "red");
+  gradienteCorrectas.addColorStop(0.5, "magenta");
+  gradienteCorrectas.addColorStop(1, "orange");
+  ahorcado.fillStyle = gradienteCorrectas;
+  //#F51C00
+  //ahorcado.fillStyle = "#D40D2C";
 
   var ancho = 600 / palabraSecreta.length;
-  tablero.fillText(palabraSecreta[index], 505 + ancho * index, 620);
+  ahorcado.fillText(palabraSecreta[index], 505 + ancho * index, 620);
 }
 
 export function dibujarLetrasIncorrectas(letra, errorsLeft) {
-  tablero.font = "bold 40px Inter";
-  tablero.lineWidth = 6;
-  tablero.lineCap = "round";
-  tablero.lineJoin = "round";
-  tablero.fillStyle = "#b746f0";
+  ahorcado.font = "100 40px 'Roboto', sans-serif";
+  ahorcado.lineWidth = 6;
+  ahorcado.lineCap = "round";
+  ahorcado.lineJoin = "round";
+  var gradienteIncorrectas = ahorcado.createLinearGradient(0,0,800,0);
+  gradienteIncorrectas.addColorStop(0, "red");
+  gradienteIncorrectas.addColorStop(0.5, "magenta");
+  gradienteIncorrectas.addColorStop(1, "orange");
+  ahorcado.fillStyle = gradienteIncorrectas;
 
-  tablero.fillText(letra, 535 + 40 * (10 - errorsLeft), 710, 40);
+  ahorcado.fillText(letra, 535 + 40 * (10 - errorsLeft), 710, 40);
 }
 
 export function verificarLetraApretada(key) {
