@@ -3,6 +3,7 @@
 }
 
 .header {
+    background: #e06e6e;
     display: flex;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -20,6 +21,7 @@
 }
 
 .footer {
+    background: #e06e6e;
     display: flex;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;

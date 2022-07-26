@@ -25,30 +25,28 @@ export function dibujarLineas() {
 
 export function dibujarLetrasCorrectas(index) {
   ahorcado.font = "300 52px 'Roboto', sans-serif";
-  ahorcado.lineWidth = 7;
+  ahorcado.lineWidth = 8;
   ahorcado.lineCap = "round";
   ahorcado.lineJoin = "round";
   var gradienteCorrectas = ahorcado.createLinearGradient(0,0,800,0);
-  gradienteCorrectas.addColorStop(0, "red");
-  gradienteCorrectas.addColorStop(0.5, "magenta");
-  gradienteCorrectas.addColorStop(1, "orange");
+  gradienteCorrectas.addColorStop(0, "#00CC0E");
+  gradienteCorrectas.addColorStop(0.5, "#40D54A");
+  gradienteCorrectas.addColorStop(1, "#00990A");
   ahorcado.fillStyle = gradienteCorrectas;
-  //#F51C00
-  //ahorcado.fillStyle = "#D40D2C";
 
   var ancho = 600 / palabraSecreta.length;
   ahorcado.fillText(palabraSecreta[index], 505 + ancho * index, 620);
 }
 
 export function dibujarLetrasIncorrectas(letra, errorsLeft) {
-  ahorcado.font = "100 40px 'Roboto', sans-serif";
-  ahorcado.lineWidth = 6;
+  ahorcado.font = "300 40px 'Roboto', sans-serif";
+  ahorcado.lineWidth = 7;
   ahorcado.lineCap = "round";
   ahorcado.lineJoin = "round";
   var gradienteIncorrectas = ahorcado.createLinearGradient(0,0,800,0);
-  gradienteIncorrectas.addColorStop(0, "red");
-  gradienteIncorrectas.addColorStop(0.5, "magenta");
-  gradienteIncorrectas.addColorStop(1, "orange");
+  gradienteIncorrectas.addColorStop(0, "#CC0300");
+  gradienteIncorrectas.addColorStop(0.5, "#D54240");
+  gradienteIncorrectas.addColorStop(1, "#990300");
   ahorcado.fillStyle = gradienteIncorrectas;
 
   ahorcado.fillText(letra, 535 + 40 * (10 - errorsLeft), 710, 40);
